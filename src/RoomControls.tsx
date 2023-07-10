@@ -10,6 +10,7 @@ import {
   ViewStyle,
   StyleProp,
   Modal,
+  Text
 } from 'react-native';
 import { AudioOutputList } from './ui/AudioOutputList';
 import type { SimulationScenario } from 'livekit-client';
@@ -63,8 +64,8 @@ export const RoomControls = ({
   const handleCancel = () => {
     setMessageDialogVisible(false);
   };
-  React.useEffect(()=>{
-  setMicEnabled(true)
+  React.useEffect(() => {
+    setMicEnabled(true)
   }, [])
 
   return (
@@ -216,11 +217,11 @@ export const RoomControls = ({
           onDisconnectClick();
         }}
       >
-      <View style={{ borderRadius: 100, backgroundColor: 'white' }}>
-        <Image
-          style={{height: 40, width: 40}}
-          source={{uri: 'https://img.uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/end-call-icon.png'}}
-        />
+        <View style={{ borderRadius: 100, backgroundColor: 'white' }}>
+          <Image
+            style={{ height: 40, width: 40 }}
+            source={{ uri: 'https://img.uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/end-call-icon.png' }}
+          />
         </View>
       </Pressable>
 
@@ -260,7 +261,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    marginVertical: 8,
+    // marginVertical: 8,
+    paddingVertical: 10,
+    backgroundColor: '#222C35'
   },
   icon: {
     width: 32,

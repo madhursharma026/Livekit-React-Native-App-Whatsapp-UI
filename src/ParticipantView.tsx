@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Image, StyleSheet, ViewStyle } from 'react-native';
 import type { Participant } from 'livekit-client';
 import { useParticipant, VideoView } from '@livekit/react-native';
-import { View } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 import { Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 export type Props = {
@@ -52,17 +52,16 @@ export const ParticipantView = ({
     ? participant.name
     : participant.identity;
   return (
-    <View style={[styles.container, style]}>
+    // <View style={[styles.container, style]}>
+      <ImageBackground style={[style]} source={{uri: 'https://w0.peakpx.com/wallpaper/925/686/HD-wallpaper-whatsapp-background-patterns-texture.jpg'}} resizeMode="cover">
       {videoView}
       <Text style={{ color: colors.text, fontSize: 24, textAlign: 'center', marginTop: 15 }}>{displayName}</Text>
-    </View>
+      </ImageBackground>
+    // </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#00153C',
-  },
   videoView: {
     width: '100%',
   },
